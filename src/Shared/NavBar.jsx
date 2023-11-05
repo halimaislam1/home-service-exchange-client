@@ -8,6 +8,9 @@ const NavBar = () => {
       <li className="font-bold text-white bg-black">
         <NavLink to="/services">Services</NavLink>
       </li>
+      <li className="font-bold text-white bg-black">
+        <NavLink to="/services">Add Services</NavLink>
+      </li>
       {/* <li className="dropdown font-bold text-white bg-black hidden ">
         <NavLink to="/services">dashboard</NavLink>
         <>
@@ -19,7 +22,7 @@ const NavBar = () => {
     </>
 
     return (
-    <div className="navbar bg-black top-0 z-20 shadow-lg ">
+    <div className="navbar max-w-70% bg-black sticky top-0 z-20 shadow-lg ">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost text-white  lg:hidden">
@@ -32,7 +35,7 @@ const NavBar = () => {
     </div>
     <div className="flex ml-5">
         <img className="h-10 w-14" src="https://i.imgur.com/5DCw3mi.png" alt="" />
-        <p className=" text-sm font-serif font-bold normal-case text-white">Home Service <br /> Exchange</p>
+        <p className=" text-sm font-serif font-bold normal-case text-transparent  bg-clip-text bg-gradient-to-r from-white to-rose-400">Home Service <br /> Exchange</p>
     </div>
   </div>
   <div className="navbar-end hidden lg:flex ">
@@ -41,17 +44,13 @@ const NavBar = () => {
     </ul>
   </div>
   <div>
-  <div className="dropdown">
-      <ul tabIndex={0} className="menu menu-sm dropdown-content bg-black mt-3 z-[1] p-2 shadow  rounded-box w-52">
-       {navLink}
-      </ul>
-</div>
-<select className="select select-bordered bg-black hidden  text-white font-bold select-md w-full max-w-xs">
+
+{/* <select className="select select-bordered bg-black hidden  text-white font-bold select-md w-full max-w-xs">
   <option className="mr-3" disabled selected>dashboard </option>
   <option>My Services</option>
   <option>Add Services</option>
   <option>My Schedules</option>
-</select>
+</select> */}
 
   </div>
 
