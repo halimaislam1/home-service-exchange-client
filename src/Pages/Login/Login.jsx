@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { AuthContext } from "../Provider/AuthProvider";
+// import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
   const { login, loginWithGoogle } = useContext(AuthContext);
