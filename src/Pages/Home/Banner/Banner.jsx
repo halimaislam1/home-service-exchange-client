@@ -8,7 +8,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const Banner = () => {
     return (
         <div>
-            <Swiper
+            <Swiper 
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -20,7 +20,7 @@ const Banner = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper "
       >
         <SwiperSlide>
           {/* Slider-1 */}
@@ -75,9 +75,7 @@ const Banner = () => {
               </div>
             </div>
           </div>
-        </SwiperSlide>
-       
-        
+        </SwiperSlide> 
       </Swiper>
         </div>
     );
