@@ -30,7 +30,7 @@ const Banner = () => {
           >
             <div className=" mr-56">
               <div className="max-w-md my-4">
-                <h1 className="  text-3xl mb-3 lg:text-6xl font-bold">
+                <h1 className=" text-black  text-3xl mb-3 lg:text-6xl font-bold">
                 Solution For <br /> All Home Service
                 </h1>
                 <p className="  font-serif">
@@ -67,7 +67,7 @@ const Banner = () => {
           >
             <div className=" mr-56">
               <div className="max-w-md my-4">
-                <h1 className="  text-3xl mb-3 lg:text-6xl font-bold">
+                <h1 className=" text-black text-3xl mb-3 lg:text-6xl font-bold">
                 Solution For <br /> All Home Service
                 </h1>
                 <p className="  font-serif">

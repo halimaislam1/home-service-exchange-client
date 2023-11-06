@@ -40,7 +40,7 @@ const NavBar = () => {
         null
       }
       <li className="font-bold text-white bg-black">
-        <NavLink to="/services">Add Services</NavLink>
+        <NavLink to="/addservices">Add Services</NavLink>
       </li>
     </>
   );

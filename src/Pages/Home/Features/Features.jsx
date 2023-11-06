@@ -2,15 +2,16 @@ import React from "react";
 
 const Features = () => {
   return (
-   <div > 
+   <div >
     <div 
      className="text-center mt-20">
         <h1 className="p-5   justify-center bg-gradient-to-r from-blue-400 via-green-500 to-amber-500 inline-block text-transparent bg-clip-text font-bold text-5xl ">
         Our Home <br /> Service  Features</h1>
         </div>
-     <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mx-auto ">
+     <div 
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mx-auto ">
         {/* HouseKeeping  */}
-      <div  className="card w-80 bg-base-100  ">   
+      <div  className="card w-80   ">   
         <div className="card-body items-center text-center">
         <figure className="px-10 pt-10">
           <img
@@ -23,7 +24,7 @@ const Features = () => {
         </div>
       </div>
         {/* Interior  */}
-      <div className="card w-80 bg-base-100  ">   
+      <div className="card w-80   ">   
         <div className="card-body items-center text-center">
         <figure className="px-10 pt-10">
           <img
@@ -36,7 +37,7 @@ const Features = () => {
         </div>
       </div>
         {/* painting  */}
-      <div className="card w-80 bg-base-100  ">   
+      <div className="card w-80   ">   
         <div className="card-body items-center text-center">
         <figure className="px-10 pt-10">
           <img
@@ -49,7 +50,7 @@ const Features = () => {
         </div>
       </div>
         {/* shift  */}
-      <div className="card w-80 bg-base-100  ">   
+      <div className="card w-80   ">   
         <div className="card-body items-center text-center">
         <figure className="px-10 pt-10">
           <img
@@ -62,7 +63,7 @@ const Features = () => {
         </div>
       </div>
         {/* security  */}
-      <div className="card w-80 bg-base-100  ">   
+      <div className="card w-80   ">   
         <div className="card-body items-center text-center">
         <figure className="px-10 pt-10">
           <img
@@ -75,7 +76,7 @@ const Features = () => {
         </div>
       </div>
         {/* Electronic  */}
-      <div className="card w-80 bg-base-100  ">   
+      <div className="card w-80   ">   
         <div className="card-body items-center text-center">
         <figure className="px-10 pt-10">
           <img
@@ -88,7 +89,7 @@ const Features = () => {
         </div>
       </div>
         {/* Air cooler  */}
-      <div className="card w-80 bg-base-100  ">   
+      <div className="card w-80   ">   
         <div className="card-body items-center text-center">
         <figure className="px-10 pt-10">
           <img
@@ -101,7 +102,7 @@ const Features = () => {
         </div>
       </div>
         {/* medical  */}
-      <div className="card w-80 bg-base-100  ">   
+      <div className="card w-80   ">   
         <div className="card-body items-center text-center">
         <figure className="px-10 pt-10">
           <img
