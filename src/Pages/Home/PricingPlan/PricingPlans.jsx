@@ -10,10 +10,10 @@ const PricingPlans = () => {
         className="
         font-md text-blue-500 font-mono  text-xl mb-2
         ">Special offers</p>
-        <h1 className="text-5xl text-black font-bold mb-12 normal-case bg-gradient-to-r from-black  to-blue-500 inline-block text-transparent bg-clip-text 
+        <h1 className="text-5xl text-black font-bold h-20  normal-case bg-gradient-to-r from-black  to-blue-500 inline-block text-transparent bg-clip-text 
         ">Pricing Plans</h1>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ml-12  mt-12 mb-16'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ml-12  mt-8 mb-16'>
         {/* Silver Pack */}
         
       <div className="card w-96 bg-white  border shadow-lg ">

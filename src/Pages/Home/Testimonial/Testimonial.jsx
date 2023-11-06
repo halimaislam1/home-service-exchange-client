@@ -53,7 +53,7 @@ const Testimonial = () => {
                 type="radio"
                 name="rating-2"
                 className="mask mask-star-2 bg-rose-400"
-                checked
+                readOnly
               />
             </div>
             <h2 className="card-title mx-auto">Lisa Ena</h2>
@@ -90,7 +90,7 @@ const Testimonial = () => {
                 type="radio"
                 name="rating-2"
                 className="mask mask-star-2 bg-rose-400 "
-                checked
+                readOnly
               />
               <input
                 type="radio"
@@ -137,13 +137,13 @@ const Testimonial = () => {
                 type="radio"
                 name="rating-2"
                 className="mask mask-star-2 bg-rose-400 "
-                checked
+                readOnly
               />
               <input
                 type="radio"
                 name="rating-2"
                 className="mask mask-star-2 bg-rose-400"
-                checked
+             
               />
               <input
                 type="radio"
