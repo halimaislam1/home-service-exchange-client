@@ -1,12 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 
 
-const PopularService = () => {
-    const popularServices = useLoaderData();
+const PopularService = ({popularServices}) => {
+    console.log(popularServices);
     console.log("here is popular services", popularServices);
     return (
         <div>
-           <h1 className="text-2xl">popular service: {PopularService.length}</h1> 
+           <h1 className="text-2xl">popular service: {popularServices.length}</h1> 
         </div>
     );
 };

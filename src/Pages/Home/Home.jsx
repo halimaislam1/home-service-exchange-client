@@ -4,12 +4,15 @@ import PricingPlans from './PricingPlan/PricingPlans';
 import Testimonial from './Testimonial/Testimonial';
 import Features from './Features/Features';
 import PopularService from './PopularService/PopularService';
+import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
+    const popularServices = useLoaderData();
+    console.log(popularServices);
     return (
         <div>
             <Banner></Banner>
-            <PopularService></PopularService>
+            <PopularService popularServices={popularServices}></PopularService>
             <PricingPlans></PricingPlans>
             <Features></Features>
             <Testimonial></Testimonial>
