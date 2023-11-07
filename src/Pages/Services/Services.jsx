@@ -1,24 +1,45 @@
-import { useContext } from "react";
+import { useContext,  useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import { FaLocationDot } from 'react-icons/fa6';
+import { FaLocationDot } from "react-icons/fa6";
 
 const Services = () => {
   const { user } = useContext(AuthContext);
   const allServices = useLoaderData();
-  console.log("here is all services", allServices);
+  const [showAll, setShowAll] = useState(false);
+  const [searchResult, setSearchResult] = useState("");
+  // console.log("here is all services", allServices);
+
+  const filteredServices = allServices.filter((service) =>service.serviceName.toLowerCase().includes(searchResult)
+  );
+  const displayAllServices = showAll ? filteredServices: filteredServices.slice(0, 6);
+
   return (
     <div className="grid grid-cols-1  max-w-4xl mx-auto mt-20">
-      <span className="mx-auto"><img className="w-16 " src="https://i.imgur.com/JHOf3wu.jpg" alt="" /></span>
+      <span className="mx-auto">
+        <img className="w-16 " src="https://i.imgur.com/JHOf3wu.jpg" alt="" />
+      </span>
       <h1 className="text-center text-5xl  font-bold ">
-       Our  All  Home  Services
+        Our All Home Services
       </h1>
-      <p className="mt-2 ml-4 fond-semibold text-gray-600 
-      ">Home services encompass a diverse range of professional solutions aimed at enhancing the quality of life within a residential environment. These services cover various aspects, including maintenance, repair, design, and improvement. Whether its shifting,plumbing,interior design, painting,health and cleaning  electrical work services etc for the essential infrastructure.</p>
+      {/* search button */}
+      <div className="form-control mx-auto mt-5">
+        <div className="input-group ">
+          <input
+            type="text"
+            placeholder="Search…"
+            className="input input-bordered "
+            value={searchResult}
+            onChange={(e) => setSearchResult(e.target.value.toLowerCase())}
+          />
+          <button className="btn p-4 text-white bg-black">search</button>
+        </div>
+      </div>
+      
       <div className="grid grid-cols-1 mt-10">
-        {allServices.map((service) => (
+        {displayAllServices?.map((service) => (
           <div
-            key={allServices._id}
+            key={service._id}
             className="card lg:card-side rounded-md bg-base-100 border mb-6"
           >
             <figure>
@@ -34,32 +55,29 @@ const Services = () => {
                     {service.description}
                   </p>
                 </div>
-
               </div>
               <span className="my-6 ">
-              
-               <p className="font-md text-black gap-1 font-serif flex items-center">
+                <p className="font-md text-black gap-1 font-serif flex items-center">
                   <FaLocationDot></FaLocationDot>
                   Service Area : {service.serviceArea}
                 </p>
-                
-            
+
                 <p className="font-md text-black font-serif">
                   Service Price : {service.price}
                 </p>
               </span>
               <span className="flex ">
-                 <span >
+                <span>
                   <p className="ml-16 font-bold">service Provider:</p>
-                 <p className="ml-16 ">{user?.displayName}</p>
-                 </span>
+                  <p className="ml-16 ">{user?.displayName}</p>
+                </span>
                 <img
                   className="rounded-full w-14 h-14 absolute mb-20 "
                   src={user?.photoURL}
                   alt=""
-                />    
+                />
               </span>
-              
+
               <span className="flex justify-end relative top-4 left-3 bottom-5 ">
                 <button className="bg-black p-3 text-white rounded">
                   View Details
@@ -69,8 +87,19 @@ const Services = () => {
           </div>
         ))}
       </div>
+      {!showAll && (
+        <p className="mx-auto mb-10">
+          <button
+            onClick={() => setShowAll(true)}
+            className="bg-rose-500 px-7 py-4 text-white font-bold rounded-sm "
+          >
+            Show All
+          </button>
+        </p>
+      )}
     </div>
   );
 };
 
 export default Services;
+
