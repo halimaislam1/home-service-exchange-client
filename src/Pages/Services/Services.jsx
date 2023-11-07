@@ -43,12 +43,12 @@ const Services = () => {
             className="card lg:card-side rounded-md bg-base-100 border mb-6"
           >
             <figure>
-              <img className="h-96 " src={service.photo} alt="interior img" />
+              <img className=" h-80" src={service.photo} alt="interior img" />
             </figure>
             <div className="card-body w-[65%]">
               <div className="flex justify-between">
                 <div className="">
-                  <h2 className="text-2xl mb-3 font-bold text-black">
+                  <h2 className="text-xl mb-3 font-bold text-black">
                     {service.serviceName}
                   </h2>
                   <p className="text-black font-serif font-medium">
@@ -72,14 +72,14 @@ const Services = () => {
                   <p className="ml-16 ">{user?.displayName}</p>
                 </span>
                 <img
-                  className="rounded-full w-14 h-14 absolute mb-20 "
+                  className="rounded-full w-14 h-14 absolute  mb-20"
                   src={user?.photoURL}
                   alt=""
                 />
               </span>
 
-              <span className="flex justify-end relative top-4 left-3 bottom-5 ">
-                <button className="bg-black p-3 text-white rounded">
+              <span className="flex justify-end relative top-4 left-3  ">
+                <button className="bg-black p-3 text-white rounded ">
                   View Details
                 </button>
               </span>

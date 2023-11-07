@@ -3,7 +3,12 @@ import React from "react";
 const Testimonial = () => {
  
   return (
-    <div style={{ backgroundImage: "url(https://i.imgur.com/lUcXPD1.jpg)" }} className="bg-gray-100 pt-28 pb-32 mt-32 mb-8">
+    // <div style={{ backgroundImage: "url(https://i.imgur.com/lUcXPD1.jpg)" }} className="bg-gray-100 pt-28 pb-32 mt-32 mb-8">
+    <div style={{
+      backgroundImage: "url(https://i.imgur.com/jYhCuvW.png)",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+    }} className="bg-gray-100 pt-28 pb-32 mt-32 ">
       <div className="text-center">
         <p className="text-xl text-rose-600 mb-3">TESTIMONIAL</p>
         <h1 className="text-4xl mb-16 text-black font-semibold">

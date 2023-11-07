@@ -2,15 +2,15 @@ import React from "react";
 
 const Features = () => {
   return (
-   <div >
+   <div  >
     <div 
      className="text-center mt-20">
 
-        <h1 className="p-5 font-semibold text-5xl ">
+        <h1 className="p-5 font-semibold text-3xl md:text-5xl ">
         Our Home Service <br /> Features</h1>
         </div>
      <div 
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mx-auto ">
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-2 mx-auto max-w-5xl ">
         {/* HouseKeeping  */}
       <div  className="card w-80   ">   
         <div className="card-body items-center text-center">
@@ -25,7 +25,7 @@ const Features = () => {
         </div>
       </div>
         {/* Interior  */}
-      <div className="card w-80   ">   
+      <div className="card w-80  ">   
         <div className="card-body items-center text-center">
         <figure className="px-10 pt-10">
           <img
