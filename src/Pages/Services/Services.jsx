@@ -1,5 +1,5 @@
 import { useContext,  useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FaLocationDot } from "react-icons/fa6";
 
@@ -15,9 +15,10 @@ const Services = () => {
   const displayAllServices = showAll ? filteredServices: filteredServices.slice(0, 6);
 
   return (
+    // 
     <div className="grid grid-cols-1  max-w-4xl mx-auto mt-20">
       <span className="mx-auto">
-        <img className="w-16 " src="https://i.imgur.com/JHOf3wu.jpg" alt="" />
+        <img className=" w-20" src="https://i.imgur.com/JHOf3wu.jpg" alt="" />
       </span>
       <h1 className="text-center text-5xl  font-bold ">
         Our All Home Services
@@ -79,9 +80,9 @@ const Services = () => {
               </span>
 
               <span className="flex justify-end relative top-4 left-3  ">
-                <button className="bg-black p-3 text-white rounded ">
+                <Link to={`/services/${service._id}`}><button className="bg-black p-3 text-white rounded ">
                   View Details
-                </button>
+                </button></Link>
               </span>
             </div>
           </div>

@@ -29,9 +29,10 @@ const NavBar = () => {
         <summary className="text-white">
           Dashboard
         </summary>
-        <ul className="p-2 bg-base-100">
-          <li><a>Link 1</a></li>
-          <li><a>Link 2</a></li>
+        <ul className="p-1 border-none rounded-none bg-base-200">
+          <li className="bg-base-200"><NavLink to='/myservice'> My services</NavLink></li>
+          <li className="bg-base-200"><NavLink to='/addService'>Add services</NavLink></li>
+          <li className="bg-base-200"><NavLink to='/myschedules'>My schedules</NavLink></li>
         </ul>
       </details>
     </li>

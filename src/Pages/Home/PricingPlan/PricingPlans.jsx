@@ -3,9 +3,9 @@ import { BsArrowRight } from 'react-icons/bs';
 const PricingPlans = () => {
   return (
     <div  
-     className="mt-28 p-2 bg-gray-100">
+     className=" p-2 bg-gray-200">
         
-      <div className="text-center mt-8 bg-gray-100">
+      <div className="text-center mt-28 bg-gray-200">
         <p   
         className="
         font-md text-blue-500 font-mono  text-xl mb-2

@@ -7,8 +7,9 @@ import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AddService from "../Pages/AddService/AddService";
 import Services from "../Pages/Services/Services";
-// import PopularService from "../Pages/Home/PopularService/PopularService";
-import PrivateRoute from "../../PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
+import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
+// import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 
 
 const router = createBrowserRouter([
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
       errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
-            path: '/',
+            index:true,
             element: <Home></Home>,
             loader:() => fetch('http://localhost:5000/services')
         },
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
             element: <Services></Services>,
             loader:() => fetch('http://localhost:5000/services')
         },
-        
+        {
+            path: '/services/:id',
+            element: <ServiceDetails></ServiceDetails>,
+            loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+        }
         
 
       ]
