@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         {
             index:true,
             element: <Home></Home>,
-            loader:() => fetch('http://localhost:5000/services')
+            loader:() => fetch('https://home-service-exchange-server.vercel.app/services')
         },
         {
             path: '/login',
@@ -36,17 +36,17 @@ const router = createBrowserRouter([
         {
             path: '/addservices',
             element: <PrivateRoute><AddService></AddService></PrivateRoute>,
-            loader:() => fetch('http://localhost:5000/services')
+            loader:() => fetch('https://home-service-exchange-server.vercel.app/services')
         },
         {
             path: '/services',
             element: <Services></Services>,
-            loader:() => fetch('http://localhost:5000/services')
+            loader:() => fetch('https://home-service-exchange-server.vercel.app/services')
         },
         {
             path: '/services/:id',
             element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-            loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+            loader:({params}) => fetch(`https://home-service-exchange-server.vercel.app/services/${params.id}`)
         },
         {
             path:'/purchase',
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         {
             path: '/updateService/:id',
             element:<UpdateService></UpdateService>,
-            // loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+            // loader:({params}) => fetch(`https://home-service-exchange-server.vercel.app/services/${params.id}`)
         }
         
 

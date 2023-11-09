@@ -8,7 +8,7 @@ const ManageService = () => {
   const { user } = useContext(AuthContext);
   const [manageService, setManageService] = useState([]);
 
-  const url = `http://localhost:5000/purchase?email=${user?.email}`;
+  const url = `https://home-service-exchange-server.vercel.app/purchase?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -26,7 +26,7 @@ const ManageService = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/purchase/${id}`,{
+        fetch(`https://home-service-exchange-server.vercel.app/purchase/${id}`,{
           method: 'DELETE'
         })
         .then(res => res.json)
