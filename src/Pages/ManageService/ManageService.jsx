@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import ManageServiceRow from "./ManageServiceRow";
+import Swal from "sweetalert2";
 
 const ManageService = () => {
   const { user } = useContext(AuthContext);
@@ -10,8 +11,41 @@ const ManageService = () => {
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setManageService(data));
-  });
+      .then((data) => setManageService(data))
+  },[]);
+
+  const handleDeleteService = id => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/purchase/${id}`,{
+          method: 'DELETE'
+        })
+        .then(res => res.json)
+        .then(data => {
+          console.log(data);
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+          });
+        })
+        const remaingService = manageService.filter(service => service._id !== id)
+        setManageService(remaingService)
+       
+      }
+    });
+
+      
+  }
+
 
   return (
     <div>
@@ -37,6 +71,7 @@ const ManageService = () => {
             {/* row 1 */}
                 {
                     manageService.map(service => <ManageServiceRow key={manageService._id}
+                    handleDeleteService={handleDeleteService}
                     service={service}
                     ></ManageServiceRow>)
                   }

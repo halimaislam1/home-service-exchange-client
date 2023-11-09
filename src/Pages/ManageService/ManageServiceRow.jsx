@@ -1,5 +1,12 @@
-const ManageServiceRow = ({ service }) => {
-  const { serviceName, date, price, photo } = service;
+// import Swal from "sweetalert2";
+
+import { Link } from "react-router-dom";
+
+const ManageServiceRow = ({ service ,handleDeleteService}) => {
+  const {_id, serviceName, date, price, photo } = service;
+
+
+
   return (
     <tr>
       <th><img className="w-12 h-12" src={photo} alt="" /></th>
@@ -8,10 +15,10 @@ const ManageServiceRow = ({ service }) => {
       <td>{date}</td>
       <td></td>
       <td>
-        <button>update</button>
+        <Link to={`/updateService/${_id}`}><button className="bg-gray-100">update</button></Link>
       </td>
       <td>
-        <button className="btn btn-circle btn-sm text-white bg-black">
+        <button onClick={() => handleDeleteService(_id)} className="btn btn-circle btn-sm text-white bg-black">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -30,36 +37,6 @@ const ManageServiceRow = ({ service }) => {
       </td>
     </tr>
 
-    // <tr>
-    //  <th>
-    //     <label>
-    //       <input type="checkbox" className="checkbox" />
-    //     </label>
-    //   </th>
-    //    <td>
-
-    //       <div className="avatar">
-    //         <div className="rounded w-28 h-28">
-    //          {photo && <img
-    //             src={photo}
-    //             alt="Avatar Tailwind CSS Component" />}
-
-    //       </div>
-
-    //     </div>
-    //   </td>
-    //   <td>
-    //     {
-    //       serviceName
-    //     }
-
-    //   </td>
-    //   <td>{date}</td>
-    //   <td>{price}</td>
-    //   <th>
-    //     <button className="btn btn-ghost btn-xs">details</button>
-    //   </th>
-    // </tr>
   );
 };
 

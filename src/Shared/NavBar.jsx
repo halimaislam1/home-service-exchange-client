@@ -23,7 +23,7 @@ const NavBar = () => {
         <NavLink to="/services">Services</NavLink>
       </li>
       { user?.email? <li className="font-bold text-white bg-black"><NavLink to="/purchase">Manage Services</NavLink>
-      </li> : <li><Link to= '/login'>Login</Link></li>
+      </li> : ''
       
       }
       {
