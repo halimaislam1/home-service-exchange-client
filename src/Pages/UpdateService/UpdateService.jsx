@@ -1,13 +1,21 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 
 const UpdateService = () => {
-  
-    const updateServices = useLoaderData();
-    console.log(updateServices);
-    
-    const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+    const [update, setUpdate]= useState()
+    // const updateServices = useLoaderData();
+    // console.log(updateServices);
+   
+     useEffect(() => {
+       fetch('http://localhost:5000/services/')
+       .then(res=> res.json())
+       .then(data => {
+        console.log(data)
+       })
+     } ,[])
+
   
     const handleUpdateServices = (e) => {
       e.preventDefault();
@@ -48,7 +56,7 @@ const UpdateService = () => {
                         <input
                           type="text"
                           name="serviceName"
-                          value={updateServices.serviceName}
+                          // value={updateServices.serviceName}
                           placeholder="service Name"
                           className="input input-bordered w-full"
                           readOnly
@@ -92,7 +100,7 @@ const UpdateService = () => {
                         <input
                           type="text"
                           name="email"
-                          value={updateServices.email}
+                          // value={updateServices.email}
                           className="input input-bordered w-full"
                           readOnly
                         />
@@ -110,7 +118,7 @@ const UpdateService = () => {
                         <input
                           type="text"
                           name="price"
-                          value={updateServices.price}
+                          // value={updateServices.price}
                           className="input input-bordered w-full"
                         />
                       </label>
@@ -142,7 +150,7 @@ const UpdateService = () => {
                         <input
                           type="text"
                           name="photo"
-                          value={updateServices.photo}
+                          // value={updateServices.photo}
                           placeholder="Photo URL"
                           className="input input-bordered w-full"
                         />

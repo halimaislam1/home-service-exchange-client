@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import ManageServiceRow from "./ManageServiceRow";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const ManageService = () => {
   const { user } = useContext(AuthContext);
@@ -42,13 +43,14 @@ const ManageService = () => {
        
       }
     });
-
-      
   }
 
 
   return (
     <div>
+        <Helmet>
+                <title>Manage service</title>
+            </Helmet>
       <h2 className="text-2xl mt-16 text-center mb-8 font-bold text-rose-700">
         Manage Your service: {manageService.length}
       </h2>

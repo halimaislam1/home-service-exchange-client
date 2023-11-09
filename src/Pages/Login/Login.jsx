@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 // import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { login, loginWithGoogle } = useContext(AuthContext);
@@ -21,28 +22,28 @@ const Login = () => {
 
     if (password.length < 6) {
       Swal.fire({
-        title: 'Success!',
-        text: 'Password should be at least 6 charecters',
-        icon: 'success',
-        confirmButtonText: 'Cool'
-      })
+        title: "Success!",
+        text: "Password should be at least 6 charecters",
+        icon: "success",
+        confirmButtonText: "Cool",
+      });
       return;
     } else if (!/[A-Z]/.test(password)) {
-    Swal.fire({
-        title: 'Success!',
-        text: 'Password should be at least one uppercase',
-        icon: 'success',
-        confirmButtonText: 'Cool'
-      })
+      Swal.fire({
+        title: "Success!",
+        text: "Password should be at least one uppercase",
+        icon: "success",
+        confirmButtonText: "Cool",
+      });
       return;
     } else if (!/[#?!@$%^&*-]/.test(password)) {
-    Swal.fire({
-        title: 'Success!',
-        text: 'Password should be at least one special character',
-        icon: 'success',
-        confirmButtonText: 'Cool'
-      })
-    
+      Swal.fire({
+        title: "Success!",
+        text: "Password should be at least one special character",
+        icon: "success",
+        confirmButtonText: "Cool",
+      });
+
       return;
     }
 
@@ -76,12 +77,13 @@ const Login = () => {
 
   return (
     <div className="mb-20 mt-12">
+      <Helmet>
+        <title>Login service</title>
+      </Helmet>
       <div className=" ">
         <div className="hero-content flex-col ">
           <div className="text-center ">
-            <h1 className="text-5xl  font-bold mb-2 ">
-              Please Login!
-            </h1>
+            <h1 className="text-5xl  font-bold mb-2 ">Please Login!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-md  bg-base-500">
             <div className="card-body bg-slate-100 rounded-xl">
@@ -111,7 +113,10 @@ const Login = () => {
                     required
                   />
                   <label className="label">
-                    <a href="#" className="label-text-alt link link-hover text-gray-700">
+                    <a
+                      href="#"
+                      className="label-text-alt link link-hover text-gray-700"
+                    >
                       Forgot password?
                     </a>
                   </label>

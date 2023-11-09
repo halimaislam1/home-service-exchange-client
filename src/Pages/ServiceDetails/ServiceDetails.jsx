@@ -4,11 +4,12 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { MdOutlinePriceChange } from "react-icons/md";
 import { TbLocationFilled } from "react-icons/tb";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const ServiceDetails = () => {
   const singleService = useLoaderData();
   console.log(singleService);
-  
+
   const { user } = useContext(AuthContext);
 
   const handleAddServices = (e) => {
@@ -32,29 +33,31 @@ const ServiceDetails = () => {
       photo,
     };
     console.log(booking);
-    fetch('http://localhost:5000/purchase',{
-        method: 'POST',
-        headers:{
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(booking)
+    fetch("http://localhost:5000/purchase", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
     })
-    .then(res=> res.json())
-    .then(data => {
-        if(data.acknowledged){
-            Swal.fire({
-                title: 'Success!',
-                text: 'Service purchase successfully',
-                icon: 'success',
-                confirmButtonText: 'Cool'
-              })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          Swal.fire({
+            title: "Success!",
+            text: "Service purchase successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
         }
-    })
-
+      });
   };
 
   return (
     <div className="mb-10">
+      <Helmet>
+        <title>Details service</title>
+      </Helmet>
       <h1 className="text-4xl text-center  mt-10 mb-10">
         Our Singe Service Details
       </h1>
@@ -105,7 +108,6 @@ const ServiceDetails = () => {
                 <form onSubmit={handleAddServices}>
                   {/* service  name */}
                   <div className="md:flex justify-center gap-5">
-                    
                     <div className="form-control md:w-1/2">
                       <label className="label">
                         <span className="label-text">service Name</span>
@@ -126,10 +128,13 @@ const ServiceDetails = () => {
                       <label className="label">
                         <span className="label-text">Date</span>
                       </label>
-                    
-                        <input type="date" name="date" className="input input-bordered" />
-                    </div>
 
+                      <input
+                        type="date"
+                        name="date"
+                        className="input input-bordered"
+                      />
+                    </div>
                   </div>
 
                   {/*user email*/}

@@ -3,10 +3,16 @@ import { AuthContext } from "../../../provider/AuthProvider";
 import { Link } from "react-router-dom";
 
 const PopularService = ({ popularServices }) => {
-  const { user } = useContext(AuthContext);
+  const { user ,loading} = useContext(AuthContext);
+ 
   console.log(popularServices);
   // console.log("here is popular services", popularServices);
-  const popularService = popularServices.slice(0,4)
+  // const popularService = popularServices.slice(0,4)
+
+  if (loading) {
+    return 'loading...'
+}
+
   return (
     <div className="p-5 md:p-10 bg-gray-100">
         <img className="mx-auto" src="https://i.imgur.com/rRGn8pM.png" alt="" />
@@ -21,7 +27,7 @@ const PopularService = ({ popularServices }) => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2  ml-0 md:ml-40 mt-10 md:mt-16 max-w-5xl mx-auto">
-        {popularService?.map((service) => (
+        {popularServices.slice(0,4).map((service) => (
           <div
             key={service.id}
             className="card w-96 h-[89%] bg-base-100 border p-2"

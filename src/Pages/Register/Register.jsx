@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -53,6 +54,9 @@ const Register = () => {
 
   return (
     <div>
+      <Helmet>
+                <title>Home service</title>
+            </Helmet>
       <div className="mb-32">
         <div className="hero-content flex-col ">
           <div className="text-center ">
