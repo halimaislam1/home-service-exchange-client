@@ -6,6 +6,7 @@ const PopularService = ({ popularServices }) => {
   const { user } = useContext(AuthContext);
   console.log(popularServices);
   // console.log("here is popular services", popularServices);
+  const popularService = popularServices.slice(0,4)
   return (
     <div className="p-5 md:p-10 bg-gray-100">
         <img className="mx-auto" src="https://i.imgur.com/rRGn8pM.png" alt="" />
@@ -20,7 +21,7 @@ const PopularService = ({ popularServices }) => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2  ml-0 md:ml-40 mt-10 md:mt-16 max-w-5xl mx-auto">
-        {popularServices.slice(0, 4).map((service) => (
+        {popularService?.map((service) => (
           <div
             key={service.id}
             className="card w-96 h-[89%] bg-base-100 border p-2"
@@ -28,10 +29,10 @@ const PopularService = ({ popularServices }) => {
             <figure>
               
               <img 
-              src={service.photo} alt="Popular Service" />
+              src={service?.photo} alt="Popular Service" />
             </figure>
             <div className="">
-              <h2 className="card-title font-bold">{service.serviceName}</h2>
+              <h2 className="card-title font-bold">{service?.serviceName}</h2>
               <p>{service.description}</p>
               <div className="flex items-center gap-2 mt-2">
                 <p>
@@ -47,10 +48,10 @@ const PopularService = ({ popularServices }) => {
                 </div>
               </div>
               <p className="font-semibold mt-3">
-                Service Price : {service.price}
+                Service Price : {service?.price}
               </p>
               <div className="flex justify-end mr-2 mb-2">
-                <Link to={`/services/${service._id}`}><button className="btn bg-black text-white  ">
+                <Link to={`/services/${service?._id}`}><button className="btn bg-black text-white  ">
                   View Details
                 </button></Link>
               </div>

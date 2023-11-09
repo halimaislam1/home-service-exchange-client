@@ -16,12 +16,16 @@ const NavBar = () => {
 
   const navLink = (
     <>
-      <li className="font-bold text-white ">
+      <li className="font-bold text-white m">
         <NavLink to="/">Home</NavLink>
       </li>
       <li className="font-bold text-white bg-black">
         <NavLink to="/services">Services</NavLink>
       </li>
+      { user?.email? <li className="font-bold text-white bg-black"><NavLink to="/purchase">Manage Services</NavLink>
+      </li> : <li><Link to= '/login'>Login</Link></li>
+      
+      }
       {
         user? (
       <li>
@@ -90,12 +94,12 @@ const NavBar = () => {
       <div>
       </div>
 
-      <div className="mr-14 ">
+      <div className="">
         {user ? (
           <div className="flex items-center justify-center gap-3 ">
             <p className="text-white ml-2">{user.displayName}</p>
             <img
-              className="w-14 h-10 rounded-full"
+              className="w-12 h-10 rounded-full"
               src={user.photoURL}
               alt=""
             />

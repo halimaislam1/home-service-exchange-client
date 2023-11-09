@@ -70,11 +70,11 @@ const Services = () => {
               <span className="flex ">
                 <span>
                   <p className="ml-16 font-bold">service Provider:</p>
-                  <p className="ml-16 ">{user?.displayName}</p>
+                  <p className="ml-16 ">{service.name}</p>
                 </span>
                 <img
                   className="rounded-full w-14 h-14 absolute  mb-20"
-                  src={user?.photoURL}
+                  src={service.userPhoto}
                   alt=""
                 />
               </span>

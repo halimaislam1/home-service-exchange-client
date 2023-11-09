@@ -15,6 +15,8 @@ const AddService = () => {
     const description = form.description.value;
     const serviceArea = form.serviceArea.value;
     const photo = form.photo.value;
+    const userPhoto = form.userPhoto.value;
+
 
     const addService = {
       name,
@@ -24,6 +26,7 @@ const AddService = () => {
       description,
       serviceArea,
       photo,
+      userPhoto
     };
     console.log(addService);
 
@@ -64,9 +67,10 @@ const AddService = () => {
               <input
                 type="text"
                 name="yourName"
-                defaultValue={user?.displayName}
+                value={user?.displayName}
                 placeholder="Your Name"
                 className="input input-bordered w-full"
+                readOnly
               
               />
             </label>
@@ -97,9 +101,10 @@ const AddService = () => {
               <input
                 type="text"
                 name="email"
-                defaultValue={user?.email}
+                value={user?.email}
                 placeholder="Your Email"
                 className="input input-bordered w-full"
+                readOnly
               
               />
             </label>
@@ -150,7 +155,7 @@ const AddService = () => {
             </label>
           </div>
         </div>
-        {/* form photo Url*/}
+        {/* service photo Url*/}
         <div className=" justify-center gap-5">
           <div className="form-control  w-1/2">
             <label className="label">
@@ -160,6 +165,22 @@ const AddService = () => {
               <input
                 type="text"
                 name="photo"
+                placeholder="Photo URL"
+                className="input input-bordered w-full"
+              />
+            </label>
+          </div>
+        </div>
+        {/*  user photo Url*/}
+        <div className=" justify-center gap-5">
+          <div className="form-control  w-1/2">
+            <label className="label">
+              <span className="label-text">user photo</span>
+            </label>
+            <label className="input-group">
+              <input
+                type="text"
+                name="userPhoto"
                 placeholder="Photo URL"
                 className="input input-bordered w-full"
               />
